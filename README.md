@@ -12,3 +12,7 @@ absolutely zero responsibility for any losses or problems that may arise from us
 
 This SDK will require you to have an account with World Trading Data (sign up 
 [here](https://www.worldtradingdata.com))
+
+Be advised, there are as yet no stable releases for this package and it is 
+100% definitely still in development and breaking changes (while avoided) may be deployed 
+at any time. You have been warned.
