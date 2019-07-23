@@ -1,9 +1,10 @@
-class UrlBuilder:
+import re
 
+
+class UrlBuilder:
     # Dunder methods
     def __init__(self):
         self.url = "https://api.worldtradingdata.com/api/v1"
-        self.has_query_string = False
 
     # Static methods
     @staticmethod
@@ -13,20 +14,34 @@ class UrlBuilder:
     # Private methods
     def __add_qs_base(self):
         self.url = ''.join([self.url, "?"])
-        self.has_query_string = True
+
+    def __add_comma(self):
+        self.url = ''.join([self.url, ','])
+
+    def __count_question_marks(self):
+        pattern = re.compile('\?')
+        question_marks_list = pattern.findall(self.url)
+        return len(question_marks_list)
 
     # Public Methods
     def add_single_query_string_param(self, query_string_param):
-        self.__add_qs_base()
+        num = self.__count_question_marks()
+        if num == 0:
+            self.__add_qs_base()
+        else:
+            self.__add_comma()
+
         self.url = ''.join([self.url, query_string_param])
 
     def add_multiple_query_string_params(self, params_as_list):
-        pass
+        for param in params_as_list:
+            self.add_single_query_string_param(param)
 
     def release_url(self):
         return self.url
 
     # Should be refactored to just return a regex test on url
     def release_has_query_string(self):
-        return self.has_query_string
+        num = self.__count_question_marks()
+        return num > 0
 
