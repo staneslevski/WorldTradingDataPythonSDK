@@ -1,6 +1,3 @@
-import re
-
-
 class UrlBuilder:
     # Dunder methods
     def __init__(self):
