@@ -1,6 +1,6 @@
 # World Trading Data Python SDK
 
-**This is an _UNOFFICIAL_ SDK. That means that neither this repo or the author have any 
+**This is an _UNOFFICIAL_ SDK. That means that neither this repo nor the author have any 
 relationship with World Trading Data. This repo is simply a tool built to make it easier to 
 integrate with the rest API.**
 

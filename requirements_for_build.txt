@@ -1,0 +1,4 @@
+# for build and distribution only
+twine==1.13.0
+wheel==0.33.4
+setuptools==40.8.0
