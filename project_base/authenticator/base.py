@@ -14,6 +14,6 @@ class AuthenticatedUrlBuilder(UrlBuilder):
         return self.build_query_string_param(key, value)
 
     # Public Methods
-    def authenticate_url(self):
-        auth_qs_param = self.__build_auth_token_qs_param()
-        self.add_single_query_string_param(auth_qs_param)
+    def release_authenticated_url(self):
+        self.add_single_query_string_param('api_token', self.__authToken)
+        return super().release_url()
