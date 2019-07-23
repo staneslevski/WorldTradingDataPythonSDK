@@ -10,6 +10,5 @@ absolutely zero responsibility for any losses or problems that may arise from us
 
 ###Getting Started
 
-This SDK will require you to have an account with World Trading Data (sign up [here]
-(https://www.worldtradingdata.com)
-)
+This SDK will require you to have an account with World Trading Data (sign up 
+[here](https://www.worldtradingdata.com))
