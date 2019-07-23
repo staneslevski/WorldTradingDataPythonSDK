@@ -4,12 +4,6 @@ from project_base.url_builder.base import UrlBuilder
 base_url = "https://api.worldtradingdata.com/api/v1"
 
 
-# Test internal state
-def test_init_function():
-    url_builder = UrlBuilder()
-    assert url_builder.url == base_url
-
-
 # Test interface functions on internal state
 def test_interface():
     url_builder = UrlBuilder()

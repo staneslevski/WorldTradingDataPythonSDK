@@ -4,7 +4,7 @@ import re
 class UrlBuilder:
     # Dunder methods
     def __init__(self):
-        self.url = "https://api.worldtradingdata.com/api/v1"
+        self.__url = "https://api.worldtradingdata.com/api/v1"
 
     # Static methods
     @staticmethod
@@ -13,19 +13,19 @@ class UrlBuilder:
 
     # Private methods
     def __add_qs_base(self):
-        self.url = ''.join([self.url, "?"])
+        self.__url = ''.join([self.__url, "?"])
 
     def __add_ampersand(self):
-        self.url = ''.join([self.url, '&'])
+        self.__url = ''.join([self.__url, '&'])
 
     def __count_question_marks(self):
         pattern = re.compile('\?')
-        question_marks_list = pattern.findall(self.url)
+        question_marks_list = pattern.findall(self.__url)
         return len(question_marks_list)
 
     # Interface function with no other purpose except to expose internal state
     def release_url(self):
-        return self.url
+        return self.__url
 
     # Public Methods
     def add_single_query_string_param(self, query_string_param):
@@ -35,7 +35,7 @@ class UrlBuilder:
         else:
             self.__add_ampersand()
 
-        self.url = ''.join([self.url, query_string_param])
+        self.__url = ''.join([self.__url, query_string_param])
 
     def add_multiple_query_string_params(self, params_as_list):
         for param in params_as_list:
