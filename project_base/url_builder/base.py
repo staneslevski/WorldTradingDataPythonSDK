@@ -23,6 +23,10 @@ class UrlBuilder:
         question_marks_list = pattern.findall(self.url)
         return len(question_marks_list)
 
+    # Interface function with no other purpose except to expose internal state
+    def release_url(self):
+        return self.url
+
     # Public Methods
     def add_single_query_string_param(self, query_string_param):
         num = self.__count_question_marks()
@@ -37,12 +41,9 @@ class UrlBuilder:
         for param in params_as_list:
             self.add_single_query_string_param(param)
 
-    # Interface function with no other purpose except to expose internal state
-    def release_url(self):
-        return self.url
-
-    # Interface function with no other purpose except to expose internal state
     def has_query_string(self):
         num = self.__count_question_marks()
         return num > 0
 
+    def set_request_category(self):
+        pass

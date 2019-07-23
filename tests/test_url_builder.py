@@ -52,3 +52,8 @@ def test_add_multiple_query_string_params():
     assert url == ''.join([base_url, '?', qs_param1, '&', qs_param2])
     question_marks_list = pattern.findall(url)
     assert len(question_marks_list) == 1
+
+
+def test_set_request_category():
+    url_builder = UrlBuilder()
+    category = "stocks"
