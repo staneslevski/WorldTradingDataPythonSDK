@@ -1,2 +1,2 @@
 urllib3==1.25.3
-pytest
+pytest==5.0.1
