@@ -15,8 +15,8 @@ class UrlBuilder:
     def __add_qs_base(self):
         self.url = ''.join([self.url, "?"])
 
-    def __add_comma(self):
-        self.url = ''.join([self.url, ','])
+    def __add_ampersand(self):
+        self.url = ''.join([self.url, '&'])
 
     def __count_question_marks(self):
         pattern = re.compile('\?')
@@ -29,7 +29,7 @@ class UrlBuilder:
         if num == 0:
             self.__add_qs_base()
         else:
-            self.__add_comma()
+            self.__add_ampersand()
 
         self.url = ''.join([self.url, query_string_param])
 

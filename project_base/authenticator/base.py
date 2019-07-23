@@ -1,7 +1,19 @@
-class Authenticator:
-    def __init__(self, auth_token):
-        self.authToken = auth_token
+from project_base.url_builder.base import UrlBuilder
 
-    def add_auth_token_to_url(self, url):
-        template_string = "{url}"
-        return ""
+
+class AuthenticatedUrlBuilder(UrlBuilder):
+    # Dunder methods
+    def __init__(self, auth_token):
+        super().__init__()
+        self.__authToken = auth_token
+
+    # Private methods
+    def __build_auth_token_qs_param(self):
+        key = "api_token"
+        value = self.__authToken
+        return self.build_query_string_param(key, value)
+
+    # Public Methods
+    def authenticate_url(self):
+        auth_qs_param = self.__build_auth_token_qs_param()
+        self.add_single_query_string_param(auth_qs_param)

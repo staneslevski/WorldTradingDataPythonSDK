@@ -49,6 +49,6 @@ def test_add_multiple_query_string_params():
     qs_param2 = UrlBuilder.build_query_string_param(key2, value2)
     url_builder.add_multiple_query_string_params([qs_param1, qs_param2])
     url = url_builder.release_url()
-    assert url == ''.join([base_url, '?', qs_param1, ',', qs_param2])
+    assert url == ''.join([base_url, '?', qs_param1, '&', qs_param2])
     question_marks_list = pattern.findall(url)
     assert len(question_marks_list) == 1
