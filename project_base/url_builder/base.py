@@ -37,11 +37,12 @@ class UrlBuilder:
         for param in params_as_list:
             self.add_single_query_string_param(param)
 
+    # Interface function with no other purpose except to expose internal state
     def release_url(self):
         return self.url
 
-    # Should be refactored to just return a regex test on url
-    def release_has_query_string(self):
+    # Interface function with no other purpose except to expose internal state
+    def has_query_string(self):
         num = self.__count_question_marks()
         return num > 0
 

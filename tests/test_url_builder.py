@@ -8,14 +8,13 @@ base_url = "https://api.worldtradingdata.com/api/v1"
 def test_init_function():
     url_builder = UrlBuilder()
     assert url_builder.url == base_url
-    assert not url_builder.release_has_query_string()
 
 
 # Test interface functions on internal state
 def test_interface():
     url_builder = UrlBuilder()
     assert url_builder.release_url() == base_url
-    assert url_builder.release_has_query_string() == False
+    assert not url_builder.has_query_string()
 
 
 def test_build_query_string_param():
@@ -33,7 +32,7 @@ def test_add_single_query_string_param():
     url_builder.add_single_query_string_param(qs_param)
     url = url_builder.release_url()
     assert url == ''.join([base_url, "?", qs_param])
-    assert url_builder.release_has_query_string() == True
+    assert url_builder.has_query_string()
 
 
 def test_add_multiple_query_string_params():
