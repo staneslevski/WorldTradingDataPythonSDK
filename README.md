@@ -16,3 +16,5 @@ This SDK will require you to have an account with World Trading Data (sign up
 Be advised, there are as yet no stable releases for this package and it is 
 100% definitely still in development and breaking changes (while avoided) may be deployed 
 at any time. You have been warned.
+
+docs coming soon... currently no public methods
