@@ -3,4 +3,4 @@
 build
 dist
 WorldTradingDataPythonSDK.egg-info
-tests/secure
+tests/secure.py
