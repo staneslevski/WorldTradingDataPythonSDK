@@ -1,5 +1,6 @@
 from project_base.public.base import WorldTradingData, RequestObject
 from .utils import random_string
+from .secure import api_token
 
 
 def test_request_object_has_all_attrs():
