@@ -1,4 +1,4 @@
-from project_base.public.base import WorldTradingData
+from WorldTradingData.public.base import WorldTradingData
 from .secure import api_token
 
 
