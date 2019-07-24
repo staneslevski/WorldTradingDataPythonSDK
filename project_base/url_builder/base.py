@@ -13,12 +13,6 @@ class UrlBuilder:
         return ''.join([key, '=', value])
 
     # Private methods
-    def __add_qs_base(self):
-        self.__url = ''.join([self.__url, "?"])
-
-    def __add_ampersand(self):
-        self.__url = ''.join([self.__url, '&'])
-
     def __count_question_marks(self):
         return self.__url.count('?')
 
@@ -44,12 +38,15 @@ class UrlBuilder:
         else:
             return ''
 
-    # Interface function with no other purpose except to expose internal state
-    def release_url(self):
+    def __build_url(self):
         base_url = self.__base_url
         category = self.__build_category()
         query_string = self.__build_query_string()
         return ''.join([base_url, category, query_string])
+
+    # Interface function with no other purpose except to expose internal state
+    def release_url(self):
+        return self.__build_url()
 
     # Public Methods
     def add_single_query_string_param(self, key, value):
