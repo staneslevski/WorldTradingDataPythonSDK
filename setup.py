@@ -15,8 +15,8 @@ def build_requirements_array():
 requirements_array = build_requirements_array()
 
 setuptools.setup(
-    name="WorldTradingDataPythonSDK",
-    version="0.0.2",
+    name="worldtradingdata",
+    version="0.0.3",
     author="Tom Stanley",
     author_email="tstanleyuk@icloud.com",
     description="Python SDK to interact with www.worldtradingdata.com",
