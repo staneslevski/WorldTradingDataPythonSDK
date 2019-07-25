@@ -190,7 +190,7 @@ class WorldTradingData:
             request.add_multiple_query_string_params(optional_params)
         return request.get()
 
-    def search_stock(self, search_term: str, params_as_dict: dict = None):
+    def stock_search(self, search_term: str, params_as_dict: dict = None):
         request = RequestObject(self.__api_token)
         request.set_request_category('stock_search')
         request.add_single_query_string_param('search_term', search_term)
