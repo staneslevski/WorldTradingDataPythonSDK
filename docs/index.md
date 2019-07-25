@@ -64,6 +64,19 @@ returned data, not locally.
 
 \# note: 'api_token' is supplied automatically
 
+### Real Time Market Data
+**Stock and Index Real Time**  
+`wtd.stock(symbol: list [, optional_params: dict])`  
+_example_  
+`more_params = {'output': 'csv'}`  
+`wtd.stock(['AAPL', 'GOOG'], more_params)`
+
+**Mutual Fund Real Time**  
+`wtd.mutual_fund(symbol: list [, optional_params: dict])`
+_example_
+`my_symbol_array = ['AAAAX', 'AAADX', 'AAAGX']`  
+`wtd.mutual_fund(my_symbol_array)`
+
 ### Intraday Market Data
 **Stock and Index Intraday**  
 `wtd.intraday(symbol: str, interval: str, range: str [, optional_params: dict])`
@@ -95,7 +108,7 @@ Perform a basic stock search with
 Anything which is a query_string param in the official docs can be passed as a 
 second argument ([see official docs for searching](https://www.worldtradingdata.com/documentation#stocks-and-indexes))
 
-`optional_params = {'output': 'csv', 'currency': 'usd'}`
+`optional_params = {'output': 'csv', 'currency': 'usd'}`  
 `wtd.search_stocks('AAPL', optional_params)`
 
 
