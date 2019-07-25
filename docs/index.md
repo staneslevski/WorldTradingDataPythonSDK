@@ -36,8 +36,24 @@ then in python...
 \>>> wtd.search_stock('AAPL')
 \# will find all your favourite fruity stocks
 
+#### General Guidance
+Required arguments should be given individually, and optional arguments should be 
+supplied as a dictionary, with the param name as the key, and the param value as the value.
 
-### Method Reference
+e.g.
+Perform a basic stock search with\
+`wtd.search_stock('AAPL')`
+
+Anything which is an optional query string param in the official docs can be passed in a dictionary 
+as a second argument 
+([see official docs for searching](https://www.worldtradingdata.com/documentation#stocks-and-indexes)).
+
+`optional_params = {'output': 'csv', 'currency': 'usd'}`
+`wtd.search_stocks('AAPL', optional_params)`
+
+
+
+## Method Reference
 
 Please be aware that this SDK is designed to be a loose wrapper around the official REST API 
 provided by www.worldtradingdata.com .
@@ -46,24 +62,29 @@ This method provides much more flexibility, but it means if you provide poorly f
 to the SDK, it will send them and you'll get an error in the 
 returned data, not locally.
 
-#### Forex
-###### Real Time
+\# note: 'api_token' is supplied automatically\
+
+
+### Historical Market Data
+**Full History**\
+`wtd.history(symbol: str [, optional_params: dict])`
+
+**Multi Single Day History**\
+`wtd.history_multi_single_day(symbol: str, date: str [, optional_params: dict])`\
+\# date should be formatted as 'YYYY-MM-DD'
+
+### Forex
+**Real Time**\
 `wtd.forex(base: str)`
 
-Args\
-base: currency code for which exchange rate data will be returned, e.g., "USD"
+**Historical**\
+`wtd.forex_history(base: str, convert_to: str [, optional_params: dict])`
 
-###### Historical
-`wtd.forex_history(base: str, convert_to: str)`
+**Single Day History**\
+`wtd.forex_single_day(base: str, date: str [, optional_params: dict])`
 
-Args\
-base: Base of the currency you wish to return data for.
-convert_to: Value of the currency you wish to return conversion data to.
-
-###### Single Day History
-wtd.forex_single_day
-#### Searching Stocks
-wtd.search_stocks(search_term: string [, optional_params: dict])
+### Searching Stocks
+`wtd._stock_search(search_term: string [, optional_params: dict])`
 
 Perform a basic stock search with\
 `wtd.search_stock('AAPL')`
@@ -71,7 +92,6 @@ Perform a basic stock search with\
 Anything which is a query_string param in the official docs can be passed as a 
 second argument ([see official docs for searching](https://www.worldtradingdata.com/documentation#stocks-and-indexes))
 
-\# note: 'search_term' and 'api_token' are supplied automatically\
 `optional_params = {'output': 'csv', 'currency': 'usd'}`
 `wtd.search_stocks('AAPL', optional_params)`
 
