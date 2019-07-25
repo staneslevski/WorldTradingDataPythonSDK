@@ -65,6 +65,7 @@ returned data, not locally.
 \# note: 'api_token' is supplied automatically
 
 ### Real Time Market Data
+_full reference at https://www.worldtradingdata.com/documentation#real-time-market-data_
 **Stock and Index Real Time**  
 `wtd.stock(symbol: list [, optional_params: dict])`  
 _example_  

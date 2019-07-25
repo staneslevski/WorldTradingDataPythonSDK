@@ -3,18 +3,51 @@ import json
 from WorldTradingData.authenticator.base import AuthenticatedUrlBuilder
 
 
-def filter_search_params(params):
-    unwanted_values = ['api_token', 'search_term']
+# utility functions
+def filter_unwanted_params(params: dict, unwanted_keys: list):
     new_dict = {}
     for (key, value) in params.items():
-        if key not in unwanted_values:
+        if key not in unwanted_keys:
+            key = key
+            value = params[key]
             new_dict[key] = value
     return new_dict
 
 
+def reduce_list_to_string(symbol_list: list):
+    single_string = symbol_list.pop()
+    while len(symbol_list) > 0:
+        val = symbol_list.pop()
+        single_string = '{single_string},{val}'.format(
+            single_string=single_string,
+            val=val
+        )
+    return single_string
+
+
+def filter_search_params(params):
+    unwanted_values = ['api_token', 'search_term']
+    return filter_unwanted_params(params, unwanted_values)
+
+
+# main class
 class WorldTradingData:
     def __init__(self, api_token):
         self.__api_token = api_token
+
+    def stock(self, symbol: list, optional_params: dict = None):
+        request = RequestObject(self.__api_token)
+        request.set_request_category('stock')
+        symbol = reduce_list_to_string(symbol)
+        request.add_single_query_string_param('symbol', symbol)
+        if optional_params is not None:
+            unwanted_keys = ['symbol', 'api_token']
+            optional_params = filter_unwanted_params(
+                optional_params,
+                unwanted_keys
+            )
+            request.add_multiple_query_string_params(optional_params)
+        return request.get()
 
     def search_stock(self, search_term: str, params_as_dict: dict = None):
         request = RequestObject(self.__api_token)
@@ -26,6 +59,7 @@ class WorldTradingData:
         return request.get()
 
 
+# member class
 class RequestObject(AuthenticatedUrlBuilder):
     def __init__(self, api_token):
         super().__init__(api_token)
