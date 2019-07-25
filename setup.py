@@ -16,7 +16,7 @@ requirements_array = build_requirements_array()
 
 setuptools.setup(
     name="worldtradingdata",
-    version="0.0.4",
+    version="0.0.90",
     author="Tom Stanley",
     author_email="tstanleyuk@icloud.com",
     description="Python SDK to interact with www.worldtradingdata.com",
@@ -26,7 +26,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=requirements_array,
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
