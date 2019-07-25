@@ -9,3 +9,4 @@ allowed_request_categories = [
     'forex_single_day',
     'stock_search'
 ]
+

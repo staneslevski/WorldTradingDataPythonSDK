@@ -62,3 +62,11 @@ class UrlBuilder:
 
     def set_request_category(self, category):
         self.__category = category
+
+    def check_if_output_is_json(self):
+        if 'output' in self.__query_string_params:
+            if self.__query_string_params['output'] == 'csv':
+                return False
+        else:
+            return True
+
