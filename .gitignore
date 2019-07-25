@@ -2,5 +2,5 @@
 # please install through pip only
 build
 dist
-WorldTradingDataPythonSDK.egg-info
+worldtradingdata.egg-info
 tests/secure.py

@@ -20,4 +20,15 @@ at any time. You have been warned.
 #### Installation
 1.  Make sure you have pip installed
 2.  In the console `pip install worldtradingdata`
-3.  Enjoy...
+
+
+then in python...
+
+\>>> from worldtradingdata import WorldTradingData
+
+\>>> my_api_token = get_my_token_from_somewhere_safe()
+
+\>>> wtd = WorldTradingData(my_api_token)
+
+\>>> wtd.search_stock('AAPL')
+\# will find all your favourite fruity stocks
