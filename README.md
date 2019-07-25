@@ -8,6 +8,10 @@ _This SDK is designed to access financial data. Therefore the author would like 
 what you do with any data you may get through this SDK is your problem and yours alone. I take 
 absolutely zero responsibility for any losses or problems that may arise from using this SDK_
 
+##### Full docs are at https://staneslevski.github.io/WorldTradingDataPythonSDK/
+
+
+
 ### Getting Started
 
 This SDK will require you to have an account with World Trading Data (sign up 
@@ -17,4 +21,23 @@ Be advised, there are as yet no stable releases for this package and it is
 100% definitely still in development and breaking changes (while avoided) may be deployed 
 at any time. You have been warned.
 
-docs coming soon... currently no public methods
+#### Installation
+1.  Make sure you have pip installed
+2.  In the console `pip install worldtradingdata`
+
+
+>>> from worldtradingdata import WorldTradingData
+
+>>> my_api_token = get_my_token_from_somewhere_safe()
+
+>>> wtd = WorldTradingData(my_api_token)
+
+>>> wtd.search_stock('AAPL')
+\# will find all your favourite fruity stocks
+
+
+For full reference, please see the docs at https://staneslevski.github.io/WorldTradingDataPythonSDK/
+
+enjoy!
+
+

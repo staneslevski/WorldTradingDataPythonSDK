@@ -21,4 +21,3 @@ at any time. You have been warned.
 1.  Make sure you have pip installed
 2.  In the console `pip install worldtradingdata`
 3.  Enjoy...
-

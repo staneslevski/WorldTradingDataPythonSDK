@@ -64,7 +64,7 @@ def test_check_if_output_is_json():
     url_builder = UrlBuilder()
     category = "stock"
     url_builder.set_request_category(category)
-    assert url_builder.check_if_output_is_json() == True
+    assert url_builder.check_if_output_is_json()
     url_builder.add_single_query_string_param('output', 'json')
     assert url_builder.check_if_output_is_json()
     url_builder.add_single_query_string_param('output', 'csv')
