@@ -26,13 +26,13 @@ at any time. You have been warned.
 2.  In the console `pip install worldtradingdata`
 
 
->>> from worldtradingdata import WorldTradingData
+\>>> from worldtradingdata import WorldTradingData
 
->>> my_api_token = get_my_token_from_somewhere_safe()
+\>>> my_api_token = get_my_token_from_somewhere_safe()
 
->>> wtd = WorldTradingData(my_api_token)
+\>>> wtd = WorldTradingData(my_api_token)
 
->>> wtd.search_stock('AAPL')
+\>>> wtd.search_stock('AAPL')
 \# will find all your favourite fruity stocks
 
 
