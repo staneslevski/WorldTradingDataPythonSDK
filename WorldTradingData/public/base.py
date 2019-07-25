@@ -49,6 +49,147 @@ class WorldTradingData:
             request.add_multiple_query_string_params(optional_params)
         return request.get()
 
+    def mutual_fund(self, symbol: list, optional_params: dict = None):
+        request = RequestObject(self.__api_token)
+        request.set_request_category('mutualfund')
+        symbol = reduce_list_to_string(symbol)
+        request.add_single_query_string_param('symbol', symbol)
+        if optional_params is not None:
+            unwanted_keys = ['api_token', 'symbol']
+            optional_params = filter_unwanted_params(
+                optional_params,
+                unwanted_keys
+            )
+            request.add_multiple_query_string_params(optional_params)
+        return request.get()
+
+    def intraday(
+        self,
+        symbol: str,
+        time_interval: int,
+        day_range: int,
+        optional_params: dict = None
+    ):
+        req_params = {
+            'symbol': symbol,
+            'interval': time_interval,
+            'range': day_range
+        }
+        request = RequestObject(self.__api_token)
+        request.set_request_category('intraday')
+        request.add_multiple_query_string_params(req_params)
+        if optional_params is not None:
+            unwanted_keys = [
+                'api_token',
+                'symbol',
+                'interval',
+                'range'
+            ]
+            optional_params = filter_unwanted_params(
+                optional_params,
+                unwanted_keys
+            )
+            request.add_multiple_query_string_params(optional_params)
+        return request.get()
+
+    def history(self, symbol: str, optional_params: dict = None):
+        request = RequestObject(self.__api_token)
+        request.set_request_category('history')
+        request.add_single_query_string_param('symbol', symbol)
+        if optional_params is not None:
+            unwanted_keys = ['api_token', 'symbol']
+            optional_params = filter_unwanted_params(
+                optional_params,
+                unwanted_keys
+            )
+            request.add_multiple_query_string_params(optional_params)
+        return request.get()
+
+    def history_multi_single_day(
+        self,
+        symbol: list,
+        date: str,
+        optional_params: dict = None
+    ):
+        symbol = reduce_list_to_string(symbol)
+        req_params = {
+            'symbol': symbol,
+            'date': date,
+        }
+        request = RequestObject(self.__api_token)
+        request.set_request_category('history_multi_single_day')
+        request.add_multiple_query_string_params(req_params)
+        if optional_params is not None:
+            unwanted_keys = [
+                'api_token',
+                'symbol',
+                'date',
+            ]
+            optional_params = filter_unwanted_params(
+                optional_params,
+                unwanted_keys
+            )
+            request.add_multiple_query_string_params(optional_params)
+        return request.get()
+
+    def forex(self, base: str):
+        request = RequestObject(self.__api_token)
+        request.set_request_category('forex')
+        request.add_single_query_string_param('base', base)
+        return request.get()
+
+    def forex_history(
+        self,
+        base: str,
+        convert_to: str,
+        optional_params: dict = None
+    ):
+        req_params = {
+            'base': base,
+            'convert_to': convert_to
+        }
+        request = RequestObject(self.__api_token)
+        request.set_request_category('forex_history')
+        request.add_multiple_query_string_params(req_params)
+        if optional_params is not None:
+            unwanted_keys = [
+                'api_token',
+                'base',
+                'convert_to'
+            ]
+            optional_params = filter_unwanted_params(
+                optional_params,
+                unwanted_keys
+            )
+            request.add_multiple_query_string_params(optional_params)
+        return request.get()
+
+    def forex_single_day(
+        self,
+        base: str,
+        date: str,
+        optional_params: dict = None
+    ):
+        req_params = {
+            'base': base,
+            'date': date
+        }
+        request = RequestObject(self.__api_token)
+        request.set_request_category('forex_single_day')
+        request.add_multiple_query_string_params(req_params)
+        if optional_params is not None:
+            unwanted_keys = [
+                'api_token',
+                'base',
+                'date'
+            ]
+            optional_params = filter_unwanted_params(
+                optional_params,
+                unwanted_keys
+            )
+            request.add_multiple_query_string_params(optional_params)
+        return request.get()
+
     def search_stock(self, search_term: str, params_as_dict: dict = None):
         request = RequestObject(self.__api_token)
         request.set_request_category('stock_search')

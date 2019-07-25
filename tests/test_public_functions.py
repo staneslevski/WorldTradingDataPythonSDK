@@ -12,15 +12,16 @@ from .secure import api_token
 #     assert type(new_result) == str
 #     new_result = wtd.search_stock('AAPL', {'api_token': 'not_my_token'})
 #     assert type(result) == dict
-
-def test_wtd_stock():
-    wtd = WorldTradingData(api_token)
-    result = wtd.stock(['AAPL'])
-    assert type(result) == dict
-    result = wtd.stock(['AAPL', 'GOOG'])
-    assert type(result) == dict
-    result = wtd.stock(['AAPL', 'GOOG'], {'output': 'csv'})
-    assert type(result) == str
+#
+#
+# def test_wtd_stock():
+#     wtd = WorldTradingData(api_token)
+#     result = wtd.stock(['AAPL'])
+#     assert type(result) == dict
+#     result = wtd.stock(['AAPL', 'GOOG'])
+#     assert type(result) == dict
+#     result = wtd.stock(['AAPL', 'GOOG'], {'output': 'csv'})
+#     assert type(result) == str
 
 
 def test_filter_unwanted_params():
