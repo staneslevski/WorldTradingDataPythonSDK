@@ -28,7 +28,7 @@ then in python...
 
 \>>> my_api_token = get_my_token_from_somewhere_safe()
 
-\# provide the api_token once when creating the WorldTradingData instance. \
+\# provide the api_token once when creating the WorldTradingData instance.   
 \# you do not need to provide the api_token on each request 
 
 \>>> wtd = WorldTradingData(my_api_token)
@@ -41,7 +41,7 @@ Required arguments should be given individually, and optional arguments should b
 supplied as a dictionary, with the param name as the key, and the param value as the value.
 
 e.g.
-Perform a basic stock search with\
+Perform a basic stock search with  
 `wtd.search_stock('AAPL')`
 
 Anything which is an optional query string param in the official docs can be passed in a dictionary 
@@ -62,31 +62,34 @@ This method provides much more flexibility, but it means if you provide poorly f
 to the SDK, it will send them and you'll get an error in the 
 returned data, not locally.
 
-\# note: 'api_token' is supplied automatically\
+\# note: 'api_token' is supplied automatically
 
+### Intraday Market Data
+**Stock and Index Intraday**  
+`wtd.intraday(symbol: str, interval: str, range: str [, optional_params: dict])`
 
 ### Historical Market Data
-**Full History**\
+**Full History**  
 `wtd.history(symbol: str [, optional_params: dict])`
 
-**Multi Single Day History**\
-`wtd.history_multi_single_day(symbol: str, date: str [, optional_params: dict])`\
+**Multi Single Day History**  
+`wtd.history_multi_single_day(symbol: str, date: str [, optional_params: dict])`  
 \# date should be formatted as 'YYYY-MM-DD'
 
 ### Forex
-**Real Time**\
+**Real Time**  
 `wtd.forex(base: str)`
 
-**Historical**\
+**Historical**  
 `wtd.forex_history(base: str, convert_to: str [, optional_params: dict])`
 
-**Single Day History**\
+**Single Day History**  
 `wtd.forex_single_day(base: str, date: str [, optional_params: dict])`
 
 ### Searching Stocks
 `wtd._stock_search(search_term: string [, optional_params: dict])`
 
-Perform a basic stock search with\
+Perform a basic stock search with  
 `wtd.search_stock('AAPL')`
 
 Anything which is a query_string param in the official docs can be passed as a 
