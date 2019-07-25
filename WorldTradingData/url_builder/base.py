@@ -67,6 +67,5 @@ class UrlBuilder:
         if 'output' in self.__query_string_params:
             if self.__query_string_params['output'] == 'csv':
                 return False
-        else:
-            return True
+        return True
 

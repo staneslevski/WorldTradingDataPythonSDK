@@ -59,3 +59,15 @@ def test_set_request_category():
     cat_length = len(category)
     assert rem_url[0:cat_length + 1] == ''.join(['/', category])
 
+
+def test_check_if_output_is_json():
+    url_builder = UrlBuilder()
+    category = "stock"
+    url_builder.set_request_category(category)
+    assert url_builder.check_if_output_is_json() == True
+    url_builder.add_single_query_string_param('output', 'json')
+    assert url_builder.check_if_output_is_json()
+    url_builder.add_single_query_string_param('output', 'csv')
+    assert not url_builder.check_if_output_is_json()
+
+
