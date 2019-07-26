@@ -77,6 +77,7 @@ class WorldTradingData:
         }
         request = RequestObject(self.__api_token)
         request.set_request_category('intraday')
+        request.set_intraday_url()
         request.add_multiple_query_string_params(req_params)
         if optional_params is not None:
             unwanted_keys = [
@@ -216,4 +217,5 @@ class RequestObject(AuthenticatedUrlBuilder):
                 data = json.loads(data)
             return data
         else:
+            print(r)
             return Exception("How do Python exceptions work?")

@@ -66,8 +66,9 @@ Please be aware that this SDK is designed to be a loose wrapper around the offic
 provided by www.worldtradingdata.com .
 That means that it does not include pre-flight checks to make sure your provided arguments are correct. 
 This provides much more flexibility, but it means if you provide poorly formed arguments 
-to the SDK, it will send them and you'll get an error in the 
-returned data, not locally.
+to the SDK, they will be ignored and the results you get might not be what you expect.
+
+I'm working on stricter type checking for version 2.
 
 \# note: 'api_token' is supplied automatically
 
