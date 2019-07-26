@@ -19,7 +19,7 @@ at any time. You have been warned.
 
 #### Installation
 1.  Make sure you have pip installed
-2.  In the console `pip install worldtradingdata`
+2.  In the console `pip install worldtradingdata==0.1.1`
 
 
 then in python...
