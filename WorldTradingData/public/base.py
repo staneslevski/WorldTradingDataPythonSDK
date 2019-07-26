@@ -72,8 +72,8 @@ class WorldTradingData:
     ):
         req_params = {
             'symbol': symbol,
-            'interval': time_interval,
-            'range': day_range
+            'interval': str(time_interval),
+            'range': str(day_range)
         }
         request = RequestObject(self.__api_token)
         request.set_request_category('intraday')
