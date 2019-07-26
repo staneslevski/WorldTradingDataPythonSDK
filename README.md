@@ -6,7 +6,9 @@ integrate with the rest API.**
 
 _This SDK is designed to access financial data. Therefore the author would like to stress that 
 what you do with any data you may get through this SDK is your problem and yours alone. I take 
-absolutely zero responsibility for any losses or problems that may arise from using this SDK_
+absolutely zero responsibility for any losses or problems that may arise from using this SDK.
+Nor am I responsible for the accuracy of any of the data._  
+_In the words of GNU, "This software comes with ABSOLUTELY NO WARRANTY"_
 
 ### Getting Started
 
