@@ -19,7 +19,7 @@ at any time. You have been warned.
 
 #### Installation
 1.  Make sure you have pip installed
-2.  In the console `pip install worldtradingdata`
+2.  In the console `pip install worldtradingdata==0.1.1`
 
 
 then in python...
@@ -66,8 +66,9 @@ Please be aware that this SDK is designed to be a loose wrapper around the offic
 provided by www.worldtradingdata.com .
 That means that it does not include pre-flight checks to make sure your provided arguments are correct. 
 This provides much more flexibility, but it means if you provide poorly formed arguments 
-to the SDK, it will send them and you'll get an error in the 
-returned data, not locally.
+to the SDK, they will be ignored and the results you get might not be what you expect.
+
+I'm working on stricter type checking for version 2.
 
 \# note: 'api_token' is supplied automatically
 
@@ -86,10 +87,12 @@ _example_
 `wtd.mutual_fund(my_symbol_array)`  
 
 ### Intraday Market Data
+_full reference at [https://www.worldtradingdata.com/documentation#intraday-market-data](https://www.worldtradingdata.com/documentation#intraday-market-data)_  
 **Stock and Index Intraday**  
 `wtd.intraday(symbol: str, interval: int, range: int [, optional_params: dict])`  
 
 ### Historical Market Data
+_full reference at [https://www.worldtradingdata.com/documentation#historical-market-data](https://www.worldtradingdata.com/documentation#historical-market-data)_  
 **Full History**  
 `wtd.history(symbol: str [, optional_params: dict])`  
 
@@ -98,6 +101,7 @@ _example_
 `# date should be formatted as 'YYYY-MM-DD'`  
 
 ### Forex
+_full reference at [https://www.worldtradingdata.com/documentation#forex-data](https://www.worldtradingdata.com/documentation#forex-data)_  
 **Real Time**  
 `wtd.forex(base: str)`  
 
@@ -107,16 +111,16 @@ _example_
 **Single Day History**  
 `wtd.forex_single_day(base: str, date: str [, optional_params: dict])`  
 
-### Searching Stocks  
+### Searching Stocks
+_full reference at [https://www.worldtradingdata.com/documentation#searching](https://www.worldtradingdata.com/documentation#searching)_  
 `wtd._stock_search(search_term: string [, optional_params: dict])`  
 
 Perform a basic stock search with  
 `wtd.stock_search('AAPL')`  
 
-Anything which is a query_string param in the official docs can be passed as a 
-second argument ([see official docs for searching](https://www.worldtradingdata.com/documentation#stocks-and-indexes))
+Anything which is a query_string param in the official docs can be passed 
+in the dictionary of optional params.  
 
 `optional_params = {'output': 'csv', 'currency': 'usd'}`  
 `wtd.stock_search('AAPL', optional_params)`  
-
 
