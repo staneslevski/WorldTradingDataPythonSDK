@@ -19,7 +19,7 @@ This SDK will require you to have an account with World Trading Data (sign up
 
 #### Installation
 1.  Make sure you have pip3 or pip installed
-2.  In the console `pip3 install worldtradingdata==0.1.1`
+2.  In the console `pip3 install worldtradingdata==0.1.5`
 
 
 then in python...
