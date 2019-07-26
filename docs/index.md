@@ -45,7 +45,7 @@ as a second argument
 ([see official docs for full argument reference](https://www.worldtradingdata.com/documentation#stocks-and-indexes)).
 
 `optional_params = {'output': 'csv', 'currency': 'usd'}`  
-`wtd.search_stocks('AAPL', optional_params)`
+`wtd.stock_search('AAPL', optional_params)`
 
 
 Methods have been named in accordance with the url path suffix for that request in the official docs. 
@@ -111,12 +111,12 @@ _example_
 `wtd._stock_search(search_term: string [, optional_params: dict])`  
 
 Perform a basic stock search with  
-`wtd.search_stock('AAPL')`  
+`wtd.stock_search('AAPL')`  
 
 Anything which is a query_string param in the official docs can be passed as a 
 second argument ([see official docs for searching](https://www.worldtradingdata.com/documentation#stocks-and-indexes))
 
 `optional_params = {'output': 'csv', 'currency': 'usd'}`  
-`wtd.search_stocks('AAPL', optional_params)`  
+`wtd.stock_search('AAPL', optional_params)`  
 
 
