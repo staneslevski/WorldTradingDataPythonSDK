@@ -16,18 +16,14 @@ _In the words of GNU (even though this project is under the MIT license),
 This SDK will require you to have an account with World Trading Data (sign up 
 [here](https://www.worldtradingdata.com))
 
-Be advised, there are as yet no stable releases for this package and it is 
-100% definitely still in development and breaking changes (while avoided) may be deployed 
-at any time. You have been warned.
-
 #### Installation
-1.  Make sure you have pip installed
-2.  In the console `pip install worldtradingdata==0.1.1`
+1.  Make sure you have pip3 or pip installed
+2.  In the console `pip3 install worldtradingdata==0.1.1`
 
 
 then in python...
 
-`>>> from worldtradingdata import WorldTradingData`  
+`>>> from WorldTradingData import WorldTradingData`  
 `>>> my_api_token = get_my_token_from_somewhere_safe()`  
 `# provide the api_token once when creating the WorldTradingData instance.`  
 `# you do not need to provide the api_token on each request`  
