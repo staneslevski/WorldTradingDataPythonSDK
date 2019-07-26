@@ -1,6 +1,6 @@
 import urllib3
 import json
-from worldtradingdata.authenticator.base import AuthenticatedUrlBuilder
+from WorldTradingData.authenticator.base import AuthenticatedUrlBuilder
 
 
 # utility functions

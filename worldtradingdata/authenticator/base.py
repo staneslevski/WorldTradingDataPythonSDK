@@ -1,4 +1,4 @@
-from worldtradingdata.url_builder.base import UrlBuilder
+from WorldTradingData.url_builder.base import UrlBuilder
 
 
 class AuthenticatedUrlBuilder(UrlBuilder):

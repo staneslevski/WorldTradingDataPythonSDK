@@ -1,5 +1,5 @@
 import re
-from WorldTradingData.url_builder.base import UrlBuilder
+from worldtradingdata.url_builder.base import UrlBuilder
 
 base_url = "https://api.worldtradingdata.com/api/v1"
 

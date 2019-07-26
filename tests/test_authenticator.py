@@ -1,4 +1,4 @@
-from WorldTradingData.authenticator.base import AuthenticatedUrlBuilder
+from worldtradingdata.authenticator.base import AuthenticatedUrlBuilder
 from . import utils
 import re
 

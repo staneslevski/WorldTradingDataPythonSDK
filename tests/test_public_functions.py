@@ -1,10 +1,10 @@
-from WorldTradingData.public.base import WorldTradingData
-import WorldTradingData.public.base as wtd_lib
+from worldtradingdata.public.base import WorldTradingData
+import worldtradingdata.public.base as wtd_lib
 from .secure import api_token
 
 
 # def test_world_trading_data_class():
-#     wtd = WorldTradingData(api_token)
+#     wtd = worldtradingdata(api_token)
 #     result = wtd.stock_search('AAPL')
 #     # print(result)
 #     assert type(result) == dict
@@ -42,7 +42,7 @@ def test_reduce_list_to_string():
 
 
 # def test_wtd_stock():
-#     wtd = WorldTradingData(api_token)
+#     wtd = worldtradingdata(api_token)
 #     result = wtd.stock(['AAPL'])
 #     assert type(result) == dict
 #     result = wtd.stock(['AAPL', 'GOOG'])
@@ -52,7 +52,7 @@ def test_reduce_list_to_string():
 #
 #
 # def test_mutual_fund():
-#     wtd = WorldTradingData(api_token)
+#     wtd = worldtradingdata(api_token)
 #     res = wtd.mutual_fund(['AAAAX', 'AAADX', 'AAAGX'])
 #     assert type(res) == dict
 #     res = wtd.mutual_fund(['AAAAX', 'AAADX', 'AAAGX'], {'output': 'csv'})
