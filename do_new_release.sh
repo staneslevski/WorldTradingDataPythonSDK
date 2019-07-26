@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
-rm dist/* build/* && \
+rm -dR dist && \
+rm -dR build && \
 python3 setup.py sdist bdist_wheel && \
 twine upload dist/*

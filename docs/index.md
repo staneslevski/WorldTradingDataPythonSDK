@@ -24,7 +24,7 @@ This SDK will require you to have an account with World Trading Data (sign up
 
 then in python...
 
-`>>> from WorldTradingData import WorldTradingData`  
+`>>> from worldtradingdata import WorldTradingData`  
 `>>> my_api_token = get_my_token_from_somewhere_safe()`  
 `# provide the api_token once when creating the WorldTradingData instance.`  
 `# you do not need to provide the api_token on each request`  
