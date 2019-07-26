@@ -87,11 +87,12 @@ _example_
 `wtd.mutual_fund(my_symbol_array)`  
 
 ### Intraday Market Data
-_full reference at [https://www.worldtradingdata.com/documentation#intraday-market-data](https://www.worldtradingdata.com/documentation#intraday-market-data)_
+_full reference at [https://www.worldtradingdata.com/documentation#intraday-market-data](https://www.worldtradingdata.com/documentation#intraday-market-data)_  
 **Stock and Index Intraday**  
 `wtd.intraday(symbol: str, interval: int, range: int [, optional_params: dict])`  
 
 ### Historical Market Data
+_full reference at [https://www.worldtradingdata.com/documentation#historical-market-data](https://www.worldtradingdata.com/documentation#historical-market-data)_  
 **Full History**  
 `wtd.history(symbol: str [, optional_params: dict])`  
 
@@ -100,6 +101,7 @@ _full reference at [https://www.worldtradingdata.com/documentation#intraday-mark
 `# date should be formatted as 'YYYY-MM-DD'`  
 
 ### Forex
+_full reference at [https://www.worldtradingdata.com/documentation#forex-data](https://www.worldtradingdata.com/documentation#forex-data)_  
 **Real Time**  
 `wtd.forex(base: str)`  
 
@@ -109,14 +111,15 @@ _full reference at [https://www.worldtradingdata.com/documentation#intraday-mark
 **Single Day History**  
 `wtd.forex_single_day(base: str, date: str [, optional_params: dict])`  
 
-### Searching Stocks  
+### Searching Stocks
+_full reference at [https://www.worldtradingdata.com/documentation#searching](https://www.worldtradingdata.com/documentation#searching)_  
 `wtd._stock_search(search_term: string [, optional_params: dict])`  
 
 Perform a basic stock search with  
 `wtd.stock_search('AAPL')`  
 
 Anything which is a query_string param in the official docs can be passed 
-in the dictionary of optional params ([see official docs for searching](https://www.worldtradingdata.com/documentation#stocks-and-indexes))
+in the dictionary of optional params.  
 
 `optional_params = {'output': 'csv', 'currency': 'usd'}`  
 `wtd.stock_search('AAPL', optional_params)`  
