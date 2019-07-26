@@ -8,7 +8,7 @@ _This SDK is designed to access financial data. Therefore the author would like 
 what you do with any data you may get through this SDK is your problem and yours alone. I take 
 absolutely zero responsibility for any losses or problems that may arise from using this SDK.
 Nor am I responsible for the accuracy of any of the data._  
-_In the words of GNU (even though this project is under the MIT license),
+_In the words of GNU (even though this project is under the MIT license),  
  "This software comes with ABSOLUTELY NO WARRANTY"_
 
 ### Getting Started
